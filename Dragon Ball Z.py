@@ -77,5 +77,7 @@ while salir == False:
                 print("tecla abajo")
     v.fill((255, 255, 255))
     v.blit(imagen, (0, 0))
-    botones()
+    botones("JUGAR", v, colorb1, boton1, tamb1)
+    botones("OPCIONES", v, colorb2, boton2, tamb2)
+    botones("SALIR", v, colorb3, boton3, tamb3)
     display.update()
