@@ -48,6 +48,16 @@ def objetotexto(texto,color,tamaño):
     if tamaño=="pequeño":
         textoSuperficie=font.render(texto,True,color)
     return textoSuperficie, textoSuperficie.get_rect()
+########### DIBUJAR BOTONES ############
+def botones(texto,superficie,estado,posicionamiento,tam):
+    cursor=mouse.get_pos()
+    if posicionamiento[0]+tam[0]>cursor[0]>tam[0] and posicionamiento[1]+tam[1]>cursor[1]>tam[1] and posicionamiento[1]+tam[1]<cursor[1]+tam[1]:
+         boton=draw.rect(superficie,estado[1],(posicionamiento[0],posicionamiento[1],tam[0],tam[1]))
+         mensaje_boton(texto,negro,posicionamiento[0],posicionamiento[1],tam[0],tam[1])
+    else:
+         boton=draw.rect(superficie, estado[0],(posicionamiento[0],posicionamiento[1],tam[0],tam[1]))
+         mensaje_boton(texto,negro,posicionamiento[0],posicionamiento[1],tam[0],tam[1])
+    return boton
 
 while salir == False:
     for evento in event.get():
