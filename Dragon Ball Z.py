@@ -21,25 +21,23 @@ init()
 v = display.set_mode((700, 400))
 display.set_caption("DRAGON BALL Z")
 salir = False
-imagen = image.load("g2.jpg")
+imagen = image.load("Imagenes/g2.jpg")
 font = font.SysFont("Showcard Gothic", 15)
 ######## texto botones ##########
 txtb1 = font.render("Jugar", True, (0, 0, 0))
 txtb2 = font.render("Instruciones", True, (0, 0, 0))
 txtb3 = font.render("Puntaje", True, (0, 0, 0))
-velo = 5
-posy = 200
-
-
-def botones():
-    draw.rect(v, (100, 90, 255), (80, 200, 100, 30))
-    v.blit(txtb1, (100, 210))
-
-    draw.rect(v, (0, 255, 50), (50, 250, 150, 30))
-    v.blit(txtb2, (70, 257))
-
-    draw.rect(v, (100, 90, 255), (80, 300, 100, 30))
-    v.blit(txtb3, (100, 310))
+########## Colores #########
+morado= Color(100,90,255)
+verde=Color(0,255,50)
+morado1=Color(100,90,255)
+plomo= Color(232,224,224)
+blanco=Color(255,255,255)
+negro=Color(0,0,0)
+#### datos de boton ###
+boton1,tamb1,colorb1=[80,200],[100,30],[plomo,morado]
+boton2,tamb2,colorb2=[50,250],[150,30],[plomo,verde]
+boton3,tamb3,colorb3=[80,300],[100,30],[plomo,morado1]
 
 
 while salir == False:
