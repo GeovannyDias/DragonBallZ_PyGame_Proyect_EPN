@@ -38,7 +38,16 @@ negro=Color(0,0,0)
 boton1,tamb1,colorb1=[80,200],[100,30],[plomo,morado]
 boton2,tamb2,colorb2=[50,250],[150,30],[plomo,verde]
 boton3,tamb3,colorb3=[80,300],[100,30],[plomo,morado1]
+######### nombre de los botones ######
+def mensaje_boton(msg,color,bx,by,anchb,altb,tamaño="pequeño"):
+    textoSuperficie,textoRect=objetotexto(msg,color,tamaño)
+    textoRect.center=(bx+(anchb/2),by+(altb/2))
+    v.blit(textoSuperficie,textoRect)
 
+def objetotexto(texto,color,tamaño):
+    if tamaño=="pequeño":
+        textoSuperficie=font.render(texto,True,color)
+    return textoSuperficie, textoSuperficie.get_rect()
 
 while salir == False:
     for evento in event.get():
