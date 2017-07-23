@@ -62,3 +62,30 @@ class Serge(pygame.sprite.Sprite):
             self.clip(self.down_states[0])
  
         self.image = self.sheet.subsurface(self.sheet.get_clip())
+
+#Por último, creamos el método handle_event () para manejar pulsaciones de teclas 
+    def handle_event(self, event):
+        if event.type == pygame.QUIT:
+            game_over = True
+ 
+        if event.type == pygame.KEYDOWN:
+           
+            if event.key == pygame.K_LEFT:
+                self.update('left')
+            if event.key == pygame.K_RIGHT:
+                self.update('right')
+            if event.key == pygame.K_UP:
+                self.update('up')
+            if event.key == pygame.K_DOWN:
+                self.update('down')
+ 
+        if event.type == pygame.KEYUP:  
+ 
+            if event.key == pygame.K_LEFT:
+                self.update('stand_left')            
+            if event.key == pygame.K_RIGHT:
+                self.update('stand_right')
+            if event.key == pygame.K_UP:
+                self.update('stand_up')
+            if event.key == pygame.K_DOWN:
+                self.update('stand_down')
