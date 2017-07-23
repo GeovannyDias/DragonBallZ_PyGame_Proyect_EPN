@@ -34,3 +34,31 @@ class Serge(pygame.sprite.Sprite):
         else:
             self.sheet.set_clip(pygame.Rect(clipped_rect))
         return clipped_rect
+
+#A continuación, Update () se basa en los dos métodos anteriores pasándoles los diccionarios (en el caso de movimiento)
+#o solo marcos y moviendo el sprite en la dirección correcta usando los valores de pygame.sprite.Sprite rect.x y rect.y incorporados .
+#A continuación, establece la imagen actual en el área cortada apropiada.
+    def update(self, direction):
+        if direction == 'left':
+            self.clip(self.left_states)
+            self.rect.x -= 5
+        if direction == 'right':
+            self.clip(self.right_states)
+            self.rect.x += 5
+        if direction == 'up':
+            self.clip(self.up_states)
+            self.rect.y -= 5
+        if direction == 'down':
+            self.clip(self.down_states)
+            self.rect.y += 5
+ 
+        if direction == 'stand_left':
+            self.clip(self.left_states[0])
+        if direction == 'stand_right':
+            self.clip(self.right_states[0])
+        if direction == 'stand_up':
+            self.clip(self.up_states[0])
+        if direction == 'stand_down':
+            self.clip(self.down_states[0])
+ 
+        self.image = self.sheet.subsurface(self.sheet.get_clip())
