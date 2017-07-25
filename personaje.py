@@ -47,10 +47,10 @@ class Serge(pygame.sprite.Sprite):
             self.rect.x += 5
         if direction == 'up':
             self.clip(self.up_states)
-            self.rect.y -= 5
+            #self.rect.y -= 5
         if direction == 'down':
             self.clip(self.down_states)
-            self.rect.y += 5
+            #self.rect.y += 5
  
         if direction == 'stand_left':
             self.clip(self.left_states[0])
