@@ -66,3 +66,48 @@ while salir == False:
     botones("OPCIONES", v, colorb2, boton2, tamb2)
     botones("SALIR", v, colorb3, boton3, tamb3)
     display.update()
+
+
+
+
+#Clear all
+
+"""
+
+def botones(texto,superficie,estado,posicionamiento,tam):
+    cursor=mouse.get_pos()
+    if posicionamiento[0]+tam[0]>cursor[0]>tam[0] and posicionamiento[1]+tam[1]>cursor[1]>tam[1] and posicionamiento[1]+tam[1]<cursor[1]+tam[1]:
+         boton=draw.rect(superficie,estado[1],(posicionamiento[0],posicionamiento[1],tam[0],tam[1]))
+         mensaje_boton(texto,negro,posicionamiento[0],posicionamiento[1],tam[0],tam[1])
+    else:
+         boton=draw.rect(superficie, estado[0],(posicionamiento[0],posicionamiento[1],tam[0],tam[1]))
+         mensaje_boton(texto,negro,posicionamiento[0],posicionamiento[1],tam[0],tam[1])
+    return boton
+
+while salir == False:
+    for evento in event.get():
+        if evento.type == QUIT:
+            salir = True
+            quit()
+            raise SystemExit
+        elif evento.type == KEYDOWN:
+            if evento.key == K_UP:
+                posy = velo
+            elif evento.key == K_DOWN:
+                posy = velo
+        elif evento.type == KEYUP:
+            if evento.key == K_UP:
+                print("tecla arriba")
+            elif evento.key == K_DOWN:
+                print("tecla abajo")
+    v.fill((255, 255, 255))
+    v.blit(imagen, (0, 0))
+    botones("JUGAR", v, colorb1, boton1, tamb1)
+    botones("OPCIONES", v, colorb2, boton2, tamb2)
+    botones("SALIR", v, colorb3, boton3, tamb3)
+    display.update()
+
+
+"""
+
+

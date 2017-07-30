@@ -99,3 +99,45 @@ def main():
 
 if __name__=='__main__':
     main()
+
+
+
+
+
+
+
+
+#Eliminar
+
+"""
+
+def main():
+    pygame.init()
+    vtn=pygame.display.set_mode((WIDTH,HEIGHT))
+    pygame.display.set_caption("DRAGON BALL Z")
+    fondo=imagen("fondov.jpg")
+    goku=imagen("gok.png",True)
+    goku_inv=pygame.transform.flip(goku,True,False)
+    clock=pygame.time.Clock()
+
+    #Bucle Ventana#
+    while True:
+        time=clock.tick(60)
+        sprite()
+        teclado()
+        fondo=pygame.transform.scale(fondo,(1000,500))
+        vtn.blit(fondo,(0,0))
+        if direc==True:
+            vtn.blit(goku,(MposX,318),(xixf[i]))
+            print(MposX,318)
+            print(xixf[i])
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                sys.exit()
+    return 0
+
+if __name__=='__main__':
+    main()
+
+"""
