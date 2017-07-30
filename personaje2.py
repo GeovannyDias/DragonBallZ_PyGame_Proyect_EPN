@@ -3,17 +3,17 @@ import pygame
 class Serge(pygame.sprite.Sprite):
     def __init__(self, position):
         self.sheet = pygame.image.load('v3.png')
-#Utilizamos el método set_clip () para mostrar sólo el fotograma 1 de nuestra hoja sprite.
+#Utilizamos el mÃ©todo set_clip () para mostrar sÃ³lo el fotograma 1 de nuestra hoja sprite.
         self.sheet.set_clip(pygame.Rect(583,0,48,80))
-#Asignamos nuestra imagen actual al área cortada.
+#Asignamos nuestra imagen actual al Ã¡rea cortada.
         self.image = self.sheet.subsurface(self.sheet.get_clip())
 #Cree un objeto rect para que corresponda a nuestra imagen.
         self.rect = self.image.get_rect()
-#Asigne la posición de forma que corresponda al píxel superior izquierdo de nuestro rect.
+#Asigne la posiciÃ³n de forma que corresponda al pÃ­xel superior izquierdo de nuestro rect.
         self.rect.topleft = position
-#Asigne nuestro marco actual a 0; Esta variable se utilizará más tarde para recorrer los marcos.
+#Asigne nuestro marco actual a 0; Esta variable se utilizarÃ¡ mÃ¡s tarde para recorrer los marcos.
         self.frame = 0
-#Cree 4 diccionarios para almacenar las coordenadas de píxeles de nuestros marcos de animación. 
+#Cree 4 diccionarios para almacenar las coordenadas de pÃ­xeles de nuestros marcos de animaciÃ³n. 
         self.left_states = { 0: (583,0,48,80), 1: (422,0,50,80), 2: (312,0,50,80)}
         self.right_states = { 0: (110,256,48,80), 1: (159,256,50,80), 2: (10,272,48,80)}
         self.up_states = { 0: (625,459,48,80), 1: (579,457,48,80), 2: (288,456,48,80)}
@@ -27,9 +27,9 @@ class Serge(pygame.sprite.Sprite):
         if self.frame > (len(frame_set) - 1):
             self.frame = 0
         return frame_set[self.frame]
-#Creamos un método para recortar el área de cada trama.
-#Primero tenemos que comprobar si estamos tratando con múltiples marcos (movimiento) o un solo marco (de pie).
-#Si el personaje se está moviendo, los marcos son manejados por el método get_frame (). Si el personaje está simplemente de pie,
+#Creamos un mÃ©todo para recortar el Ã¡rea de cada trama.
+#Primero tenemos que comprobar si estamos tratando con mÃºltiples marcos (movimiento) o un solo marco (de pie).
+#Si el personaje se estÃ¡ moviendo, los marcos son manejados por el mÃ©todo get_frame (). Si el personaje estÃ¡ simplemente de pie,
 #el marco es manejado directamente por las funciones incorporadas de Pygame.
     def clip(self, clipped_rect):
         if type(clipped_rect) is dict:
@@ -37,9 +37,9 @@ class Serge(pygame.sprite.Sprite):
         else:
             self.sheet.set_clip(pygame.Rect(clipped_rect))
         return clipped_rect
-#A continuación, Update () se basa en los dos métodos anteriores pasándoles los diccionarios (en el caso de movimiento)
-#o solo marcos y moviendo el sprite en la dirección correcta usando los valores de pygame.sprite.Sprite rect.x y rect.y incorporados .
-#A continuación, establece la imagen actual en el área cortada apropiada.
+#A continuaciÃ³n, Update () se basa en los dos mÃ©todos anteriores pasÃ¡ndoles los diccionarios (en el caso de movimiento)
+#o solo marcos y moviendo el sprite en la direcciÃ³n correcta usando los valores de pygame.sprite.Sprite rect.x y rect.y incorporados .
+#A continuaciÃ³n, establece la imagen actual en el Ã¡rea cortada apropiada.
     def update(self, direction):
         if direction == 'left':
             self.clip(self.left_states)
@@ -65,7 +65,7 @@ class Serge(pygame.sprite.Sprite):
  
         self.image = self.sheet.subsurface(self.sheet.get_clip())
         
-#Por último, creamos el método handle_event () para manejar pulsaciones de teclas 
+#Por Ãºltimo, creamos el mÃ©todo handle_event () para manejar pulsaciones de teclas 
     def handle_event(self, event):
         if event.type == pygame.QUIT:
             game_over = True
