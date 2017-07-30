@@ -6,7 +6,7 @@
 
 from pygame import * 
 from pygame.locals import *
-import pruebaPyGame as i
+#import pruebaPyGame as i
 
 class Menu:
     "Representa un menú con opciones para un juego" 
@@ -63,7 +63,7 @@ class Menu:
 
 def comenzar_nuevo_juego():
     print (" Función que muestra un nuevo juego.")
-    i.inicio()
+    #i.inicio()
 
 
 def mostrar_opciones():
